@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/', // For jalsa.github.io, use '/' (root)
+  base: '/', // For organization/user pages, use root path
   server: {
     port: 3000,
     open: true
