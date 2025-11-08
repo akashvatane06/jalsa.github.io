@@ -15,8 +15,8 @@ const HomePage = ({ onNavigateToCategory, onNavigateToItems }) => {
                 <div className="logo-container">
                     <div className="logo-image-wrapper">
                         <ImageWithFallback 
-                            src="/images/logo/WhatsApp_Image_2025-10-27_at_6.36.26_PM-removebg-preview.png" 
-                            localPath="/images/logo/WhatsApp_Image_2025-10-27_at_6.36.26_PM-removebg-preview.png"
+                            src="/jalsa.github.io/images/logo/WhatsApp_Image_2025-10-27_at_6.36.26_PM-removebg-preview.png" 
+                            localPath="/jalsa.github.io/images/logo/WhatsApp_Image_2025-10-27_at_6.36.26_PM-removebg-preview.png"
                             alt="Jalsa Logo" 
                             className="jalsa-logo-image"
                             category="drinks"

@@ -95,29 +95,31 @@ function createGradientPlaceholder(category, subcategory = null) {
 }
 
 // Local image paths (fallback when Pexels is down)
+// Note: Paths include base path for GitHub Pages deployment
+const BASE_PATH = '/jalsa.github.io';
 const localImages = {
     category: {
-        drinks: '/images/category/drinks.jpg',
-        food: '/images/category/food.jpg',
-        cigarettes: '/images/category/cigarettes.jpg'
+        drinks: `${BASE_PATH}/images/category/drinks.jpg`,
+        food: `${BASE_PATH}/images/category/food.jpg`,
+        cigarettes: `${BASE_PATH}/images/category/cigarettes.jpg`
     },
     subcategory: {
-        whisky: '/images/subcategory/whisky.jpg',
-        rum: '/images/subcategory/rum.jpg',
-        vodka: '/images/subcategory/vodka.jpg',
-        scotch: '/images/subcategory/scotch.jpg',
-        beer: '/images/subcategory/beer.jpg',
-        gin: '/images/subcategory/gin.jpg',
-        wine: '/images/subcategory/wine.jpg',
-        beverages: '/images/subcategory/beverages.jpg',
-        tandoori: '/images/subcategory/tandoori.jpg',
-        starters: '/images/subcategory/starters.jpg',
-        biryani: '/images/subcategory/biryani.jpg',
-        main_course: '/images/subcategory/main_course.jpg',
-        chinese: '/images/subcategory/chinese.jpg',
-        breads: '/images/subcategory/breads.jpg',
-        rice: '/images/subcategory/rice.jpg',
-        cigarettes: '/images/subcategory/cigarettes.jpg'
+        whisky: `${BASE_PATH}/images/subcategory/whisky.jpg`,
+        rum: `${BASE_PATH}/images/subcategory/rum.jpg`,
+        vodka: `${BASE_PATH}/images/subcategory/vodka.jpg`,
+        scotch: `${BASE_PATH}/images/subcategory/scotch.jpg`,
+        beer: `${BASE_PATH}/images/subcategory/beer.jpg`,
+        gin: `${BASE_PATH}/images/subcategory/gin.jpg`,
+        wine: `${BASE_PATH}/images/subcategory/wine.jpg`,
+        beverages: `${BASE_PATH}/images/subcategory/beverages.jpg`,
+        tandoori: `${BASE_PATH}/images/subcategory/tandoori.jpg`,
+        starters: `${BASE_PATH}/images/subcategory/starters.jpg`,
+        biryani: `${BASE_PATH}/images/subcategory/biryani.jpg`,
+        main_course: `${BASE_PATH}/images/subcategory/main_course.jpg`,
+        chinese: `${BASE_PATH}/images/subcategory/chinese.jpg`,
+        breads: `${BASE_PATH}/images/subcategory/breads.jpg`,
+        rice: `${BASE_PATH}/images/subcategory/rice.jpg`,
+        cigarettes: `${BASE_PATH}/images/subcategory/cigarettes.jpg`
     }
 };
 
