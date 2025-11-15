@@ -15,53 +15,53 @@ export function formatSubcategoryName(subcat) {
         biryani: 'Biryani',
         main_course: 'Main Course',
         chinese: 'Chinese',
-        breads: 'Breads',
+        roti: 'Roti',
         rice: 'Rice',
         cigarettes: 'Cigarettes'
     };
     return names[subcat] || subcat;
 }
 
-export function getSubcategoryIcon(subcat) {
-    const icons = {
-        whisky: '🥃',
-        rum: '🍹',
-        vodka: '🍸',
-        scotch: '🥃',
-        beer: '🍺',
-        gin: '🍸',
-        wine: '🍷',
-        beverages: '🥤',
-        tandoori: '🍗',
-        starters: '🍤',
-        biryani: '🍛',
-        main_course: '🍲',
-        chinese: '🍜',
-        breads: '🥖',
-        rice: '🍚'
-    };
-    return icons[subcat] || '🍽️';
-}
+// export function getSubcategoryIcon(subcat) {
+//     const icons = {
+//         whisky: '🥃',
+//         rum: '🍹',
+//         vodka: '🍸',
+//         scotch: '🥃',
+//         beer: '🍺',
+//         gin: '🍸',
+//         wine: '🍷',
+//         beverages: '🥤',
+//         tandoori: '🍗',
+//         starters: '🍤',
+//         biryani: '🍛',
+//         main_course: '🍲',
+//         chinese: '🍜',
+//         roti: '🥖',
+//         rice: '🍚'
+//     };
+//     return icons[subcat] || '🍽️';
+// }
 
-export function getItemIcon(category, subcat) {
-    const icons = {
-        whisky: '🥃',
-        rum: '🍹',
-        vodka: '🍸',
-        scotch: '🥃',
-        beer: '🍺',
-        gin: '🍸',
-        wine: '🍷',
-        beverages: '🥤',
-        tandoori: '🍗',
-        starters: '🍤',
-        biryani: '🍛',
-        main_course: '🍲',
-        chinese: '🍜',
-        breads: '🥖',
-        rice: '🍚',
-        cigarettes: '🚬'
-    };
-    return icons[subcat] || icons[category] || '🍽️';
-}
+// export function getItemIcon(category, subcat) {
+//     const icons = {
+//         whisky: '🥃',
+//         rum: '🍹',
+//         vodka: '🍸',
+//         scotch: '🥃',
+//         beer: '🍺',
+//         gin: '🍸',
+//         wine: '🍷',
+//         beverages: '🥤',
+//         tandoori: '🍗',
+//         starters: '🍤',
+//         biryani: '🍛',
+//         main_course: '🍲',
+//         chinese: '🍜',
+//         roti: '🥖',
+//         rice: '🍚',
+//         cigarettes: '🚬'
+//     };
+//     return icons[subcat] || icons[category] || '🍽️';
+// }
 

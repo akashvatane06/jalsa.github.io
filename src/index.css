@@ -1631,21 +1631,381 @@ body {
     color: #1c1c1c;
 }
 
-@media (max-width: 768px) {
+/* Base Mobile Styles (applies to all mobile devices up to 767px) */
+@media (max-width: 767px) {
+    .tandoori-list-item {
+        padding: 12px 16px;
+    }
+    
+    /* Food Section List Items */
+    .list-item-content {
+        gap: 12px;
+    }
+    
+    .list-item-name {
+        font-size: 14px;
+    }
+    
+    .list-price {
+        font-size: 14px;
+    }
+    
+    /* Drinks Section List Items */
+    .drinks-item-content {
+        gap: 12px;
+    }
+    
+    .drinks-list-header {
+        padding: 10px 16px;
+        gap: 12px;
+    }
+    
+    .drinks-header-name {
+        font-size: 11px;
+        min-width: 100px;
+    }
+    
+    .drinks-header-prices,
+    .drinks-item-pricing {
+        gap: 8px;
+    }
+    
+    .drinks-header-price {
+        min-width: 45px;
+        font-size: 10px;
+    }
+    
+    .drinks-item-name {
+        font-size: 13px;
+    }
+    
+    .drinks-price-cell {
+        min-width: 45px;
+        font-size: 12px;
+    }
+}
+
+/* Large Phones and Small Tablets (640px - 767px) */
+@media (max-width: 767px) and (min-width: 640px) {
+    .tandoori-list-item {
+        padding: 12px 18px;
+    }
+    
+    /* Food Section List Items */
+    .list-item-content {
+        gap: 14px;
+    }
+    
+    .list-item-name {
+        font-size: 15px;
+    }
+    
+    .list-price {
+        font-size: 15px;
+    }
+    
+    /* Drinks Section List Items */
+    .drinks-item-content {
+        gap: 14px;
+    }
+    
+    .drinks-list-header {
+        padding: 10px 18px;
+        gap: 14px;
+    }
+    
+    .drinks-header-name {
+        font-size: 11px;
+        min-width: 110px;
+    }
+    
     .drinks-header-prices,
     .drinks-item-pricing {
         gap: 10px;
     }
     
-    .drinks-header-price,
+    .drinks-header-price {
+        min-width: 50px;
+        font-size: 10px;
+    }
+    
+    .drinks-item-name {
+        font-size: 14px;
+    }
+    
     .drinks-price-cell {
         min-width: 50px;
+        font-size: 13px;
+    }
+}
+
+/* Medium Phones (480px - 640px) - iPhone 6/7/8 Plus, larger Android */
+@media (max-width: 640px) and (min-width: 480px) {
+    .tandoori-list-item {
+        padding: 12px 16px;
+    }
+    
+    /* Food Section List Items */
+    .list-item-content {
+        gap: 12px;
+    }
+    
+    .list-item-name {
+        font-size: 14px;
+    }
+    
+    .list-price {
+        font-size: 14px;
+    }
+    
+    /* Drinks Section List Items */
+    .drinks-item-content {
+        gap: 12px;
+    }
+    
+    .drinks-list-header {
+        padding: 10px 16px;
+        gap: 12px;
+    }
+    
+    .drinks-header-name {
+        font-size: 11px;
+        min-width: 100px;
+    }
+    
+    .drinks-header-prices,
+    .drinks-item-pricing {
+        gap: 8px;
+    }
+    
+    .drinks-header-price {
+        min-width: 45px;
+        font-size: 10px;
+    }
+    
+    .drinks-item-name {
+        font-size: 13px;
+    }
+    
+    .drinks-price-cell {
+        min-width: 45px;
+        font-size: 12px;
+    }
+}
+
+/* Small Phones (375px - 480px) - iPhone 6/7/8, standard Android */
+@media (max-width: 480px) and (min-width: 375px) {
+    .tandoori-list-item {
+        padding: 10px 14px;
+    }
+    
+    /* Food Section List Items */
+    .list-item-content {
+        gap: 10px;
+    }
+    
+    .list-item-name {
+        font-size: 13px;
+    }
+    
+    .list-price {
+        font-size: 13px;
+    }
+    
+    /* Drinks Section List Items */
+    .drinks-item-content {
+        gap: 10px;
+    }
+    
+    .drinks-list-header {
+        padding: 8px 14px;
+        gap: 10px;
+    }
+    
+    .drinks-header-name {
+        font-size: 10px;
+        min-width: 90px;
+    }
+    
+    .drinks-header-prices,
+    .drinks-item-pricing {
+        gap: 7px;
+    }
+    
+    .drinks-header-price {
+        min-width: 42px;
+        font-size: 9px;
+    }
+    
+    .drinks-item-name {
         font-size: 12px;
     }
     
-    .drinks-header-name,
+    .drinks-price-cell {
+        min-width: 42px;
+        font-size: 11px;
+    }
+}
+
+/* Very Small Phones (320px - 375px) - iPhone SE, small Android */
+@media (max-width: 375px) {
+    .tandoori-list-item {
+        padding: 10px 12px;
+    }
+    
+    /* Food Section List Items */
+    .list-item-content {
+        gap: 8px;
+    }
+    
+    .list-item-name {
+        font-size: 13px;
+    }
+    
+    .list-price {
+        font-size: 13px;
+    }
+    
+    /* Drinks Section List Items */
+    .drinks-item-content {
+        gap: 8px;
+    }
+    
+    .drinks-list-header {
+        padding: 8px 12px;
+        gap: 8px;
+    }
+    
+    .drinks-header-name {
+        font-size: 10px;
+        min-width: 80px;
+    }
+    
+    .drinks-header-prices,
+    .drinks-item-pricing {
+        gap: 6px;
+    }
+    
+    .drinks-header-price {
+        min-width: 40px;
+        font-size: 9px;
+    }
+    
     .drinks-item-name {
+        font-size: 12px;
+    }
+    
+    .drinks-price-cell {
+        min-width: 40px;
+        font-size: 11px;
+    }
+}
+
+/* iPad Portrait (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .tandoori-list-item {
+        padding: 16px 24px;
+    }
+    
+    /* Food Section List Items */
+    .list-item-content {
+        gap: 18px;
+    }
+    
+    .list-item-name {
+        font-size: 16px;
+    }
+    
+    .list-price {
+        font-size: 16px;
+    }
+    
+    /* Drinks Section List Items */
+    .drinks-item-content {
+        gap: 18px;
+    }
+    
+    .drinks-list-header {
+        padding: 12px 24px;
+        gap: 18px;
+    }
+    
+    .drinks-header-name {
+        font-size: 12px;
+        min-width: 140px;
+    }
+    
+    .drinks-header-prices,
+    .drinks-item-pricing {
+        gap: 16px;
+    }
+    
+    .drinks-header-price {
+        min-width: 65px;
+        font-size: 12px;
+    }
+    
+    .drinks-item-name {
+        font-size: 15px;
+    }
+    
+    .drinks-price-cell {
+        min-width: 65px;
         font-size: 14px;
+    }
+}
+
+/* iPad Landscape and iPad Pro (1024px - 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .tandoori-list-item {
+        padding: 18px 28px;
+    }
+    
+    /* Food Section List Items */
+    .list-item-content {
+        gap: 20px;
+    }
+    
+    .list-item-name {
+        font-size: 17px;
+    }
+    
+    .list-price {
+        font-size: 17px;
+    }
+    
+    /* Drinks Section List Items */
+    .drinks-item-content {
+        gap: 20px;
+    }
+    
+    .drinks-list-header {
+        padding: 14px 28px;
+        gap: 20px;
+    }
+    
+    .drinks-header-name {
+        font-size: 13px;
+        min-width: 160px;
+    }
+    
+    .drinks-header-prices,
+    .drinks-item-pricing {
+        gap: 18px;
+    }
+    
+    .drinks-header-price {
+        min-width: 70px;
+        font-size: 13px;
+    }
+    
+    .drinks-item-name {
+        font-size: 16px;
+    }
+    
+    .drinks-price-cell {
+        min-width: 70px;
+        font-size: 15px;
     }
 }
 

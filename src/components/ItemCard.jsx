@@ -124,6 +124,15 @@ function generatePricingHTML(item) {
                 )}
             </div>
         );
+    } else if (item.small !== undefined && item.large !== undefined) {
+        return (
+            <div className="pricing-grid">
+                <div className="pricing-item">
+                    <span className="pricing-label">Price</span>
+                    <span className="pricing-value">₹{item.small} / ₹{item.large}</span>
+                </div>
+            </div>
+        );
     } else if (item.price !== undefined) {
         return (
             <div className="pricing-grid">

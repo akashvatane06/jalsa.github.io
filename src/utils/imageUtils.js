@@ -56,9 +56,9 @@ const freeImages = {
         // Alternative sources: Freepik, Unsplash, Pixabay
         chinese: 'https://images.pexels.com/photos/5409020/pexels-photo-5409020.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
         
-        // Breads - Freshly baked breads (naan, roti - restaurant quality, appetizing)
-        // Source: Pexels (Alternative: Freepik, Pixabay, Unsplash)
-        breads: 'https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+        // Roti - Basket of cooked flatbreads (naan, roti - restaurant quality, appetizing)
+        // Source: Pexels - https://www.pexels.com/photo/basket-of-cooked-flatbreads-1117862/
+        roti: 'https://images.pexels.com/photos/1117862/pexels-photo-1117862.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
         
         // Rice - Very clear rice presentation (steamed basmati rice - very good way, appetizing, professional, clear)
         // Source: Pexels (Alternative: Freepik, Unsplash, Pixabay)
@@ -86,7 +86,7 @@ function createGradientPlaceholder(category, subcategory = null) {
         biryani: 'linear-gradient(135deg, #8B4513 0%, #A0522D 100%)',
         main_course: 'linear-gradient(135deg, #FF6347 0%, #FF7F50 100%)',
         chinese: 'linear-gradient(135deg, #FF4500 0%, #FF6347 100%)',
-        breads: 'linear-gradient(135deg, #DEB887 0%, #F5DEB3 100%)',
+        roti: 'linear-gradient(135deg, #DEB887 0%, #F5DEB3 100%)',
         rice: 'linear-gradient(135deg, #FFF8DC 0%, #FFEBCD 100%)'
     };
     
@@ -117,7 +117,7 @@ const localImages = {
         biryani: `${BASE_PATH}/images/subcategory/biryani.jpg`,
         main_course: `${BASE_PATH}/images/subcategory/main_course.jpg`,
         chinese: `${BASE_PATH}/images/subcategory/chinese.jpg`,
-        breads: `${BASE_PATH}/images/subcategory/breads.jpg`,
+        roti: `${BASE_PATH}/images/subcategory/roti.jpg`,
         rice: `${BASE_PATH}/images/subcategory/rice.jpg`,
         cigarettes: `${BASE_PATH}/images/subcategory/cigarettes.jpg`
     }

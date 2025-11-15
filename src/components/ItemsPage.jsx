@@ -36,9 +36,20 @@ const ItemsPage = ({ category, subcategory, onNavigateBack, onOpenModal, searchQ
         return itemsList;
     }, [category, subcategory, searchQuery]);
 
-    // Group items by veg/non-veg/egg for food, or by category for drinks/cigarettes
+    // Group items by veg/non-veg/egg for food, or by category for drinks/cigarettes/starters/roti
     const groupedItems = useMemo(() => {
-        if (category === 'food') {
+        if (category === 'food' && (subcategory === 'starters' || subcategory === 'roti')) {
+            // Group starters and roti by category (Sandwich, Soup, Egg, Chicken, Roti, Naan, Paratha, etc.)
+            const grouped = {};
+            items.forEach(item => {
+                const cat = item.category || 'Other';
+                if (!grouped[cat]) {
+                    grouped[cat] = [];
+                }
+                grouped[cat].push(item);
+            });
+            return grouped;
+        } else if (category === 'food') {
             const nonVeg = items.filter(item => item.type === 'non-veg');
             const veg = items.filter(item => item.type === 'veg');
             const egg = items.filter(item => item.type === 'egg');
@@ -58,9 +69,9 @@ const ItemsPage = ({ category, subcategory, onNavigateBack, onOpenModal, searchQ
         return null;
     }, [items, subcategory, category]);
 
-    // Initialize expanded sections for drinks/cigarettes categories
+    // Initialize expanded sections for drinks/cigarettes/starters/roti categories
     useEffect(() => {
-        if ((category === 'drinks' || category === 'cigarettes') && groupedItems) {
+        if ((category === 'drinks' || category === 'cigarettes' || (category === 'food' && (subcategory === 'starters' || subcategory === 'roti'))) && groupedItems) {
             const categories = Object.keys(groupedItems);
             setExpandedSections(prev => {
                 const newExpanded = { ...prev };
@@ -80,7 +91,7 @@ const ItemsPage = ({ category, subcategory, onNavigateBack, onOpenModal, searchQ
                 egg: true
             });
         }
-    }, [category, groupedItems]);
+    }, [category, subcategory, groupedItems]);
 
     const displayName = formatSubcategoryName(subcategory);
     const isFoodCategory = category === 'food';
@@ -147,10 +158,48 @@ const ItemsPage = ({ category, subcategory, onNavigateBack, onOpenModal, searchQ
 
             {(isFoodCategory || isDrinksCategory || isCigarettesCategory) && groupedItems ? (
                 <div className="tandoori-sections">
-                    {isFoodCategory ? (
+                    {isFoodCategory && (subcategory === 'starters' || subcategory === 'roti') ? (
+                        <>
+                            {/* Category-based sections for starters and roti */}
+                            {Object.keys(groupedItems).map((cat) => (
+                                <div key={cat} className="tandoori-section">
+                                    <div className="section-header" onClick={() => toggleSection(cat)}>
+                                        <h3 className="section-title">{cat}</h3>
+                                        <span className={`dropdown-arrow ${expandedSections[cat] ? 'expanded' : ''}`}>▼</span>
+                                    </div>
+                                    {expandedSections[cat] && (
+                                        <div className="tandoori-list">
+                                            {groupedItems[cat].map((item, index) => (
+                                                <div 
+                                                    key={`${cat}-${category}-${subcategory}-${index}`}
+                                                    className="tandoori-list-item"
+                                                >
+                                                    <div className="list-item-content">
+                                                        <div className="list-item-name">{item.name}</div>
+                                                        <div className="list-item-pricing">
+                                                            {item.half !== undefined ? (
+                                                                <span className="list-price">₹{item.half} / ₹{item.full}</span>
+                                                            ) : item.price !== undefined ? (
+                                                                <span className="list-price">₹{item.price}</span>
+                                                            ) : null}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                            {Object.keys(groupedItems).length === 0 && (
+                                <div className="empty-state">
+                                    <div className="empty-state-text">No items found</div>
+                                </div>
+                            )}
+                        </>
+                    ) : isFoodCategory ? (
                         <>
                             {/* Non-Vegetarian Section */}
-                            {groupedItems.nonVeg.length > 0 && (
+                            {groupedItems.nonVeg && groupedItems.nonVeg.length > 0 && (
                                 <div className="tandoori-section">
                                     <div className="section-header" onClick={() => toggleSection('nonVeg')}>
                                         <h3 className="section-title">Non-Vegetarian</h3>
@@ -288,6 +337,8 @@ const ItemsPage = ({ category, subcategory, onNavigateBack, onOpenModal, searchQ
                                     return labels[field] || field;
                                 };
 
+                                const displayFields = pricingFields;
+
                                 return (
                                     <div key={cat} className="tandoori-section">
                                         <div className="section-header" onClick={() => toggleSection(cat)}>
@@ -297,34 +348,44 @@ const ItemsPage = ({ category, subcategory, onNavigateBack, onOpenModal, searchQ
                                         {expandedSections[cat] && (
                                             <div className="tandoori-list">
                                                 {/* Pricing Headers */}
-                                                {pricingFields.length > 0 && (
+                                                {displayFields.length > 0 && (
                                                     <div className="drinks-list-header">
                                                         <div className="drinks-header-name"></div>
                                                         <div className="drinks-header-prices">
-                                                            {pricingFields.map(field => (
+                                                            {displayFields.map(field => (
                                                                 <div key={field} className="drinks-header-price">{getFieldLabel(field)}</div>
                                                             ))}
                                                         </div>
                                                     </div>
                                                 )}
                                                 {/* Items */}
-                                                {groupedItems[cat].map((item, index) => (
-                                                    <div 
-                                                        key={`${cat}-${category}-${subcategory}-${index}`}
-                                                        className="tandoori-list-item"
-                                                    >
-                                                        <div className="list-item-content drinks-item-content">
-                                                            <div className="list-item-name drinks-item-name">{item.name}</div>
-                                                            <div className="list-item-pricing drinks-item-pricing">
-                                                                {pricingFields.map(field => (
-                                                                    <div key={field} className="drinks-price-cell">
-                                                                        {item[field] !== undefined ? `₹${item[field]}` : <span style={{color: '#999999'}}>-</span>}
-                                                                    </div>
-                                                                ))}
+                                                {groupedItems[cat].map((item, index) => {
+                                                    const hasSmallLarge = item.small !== undefined && item.large !== undefined;
+                                                    
+                                                    return (
+                                                        <div 
+                                                            key={`${cat}-${category}-${subcategory}-${index}`}
+                                                            className="tandoori-list-item"
+                                                        >
+                                                            <div className="list-item-content drinks-item-content">
+                                                                <div className="list-item-name drinks-item-name">{item.name}</div>
+                                                                <div className="list-item-pricing drinks-item-pricing">
+                                                                    {hasSmallLarge ? (
+                                                                        <div className="drinks-price-cell" style={{gridColumn: `1 / ${displayFields.length + 1}`}}>
+                                                                            ₹{item.small} / ₹{item.large}
+                                                                        </div>
+                                                                    ) : (
+                                                                        displayFields.map(field => (
+                                                                            <div key={field} className="drinks-price-cell">
+                                                                                {item[field] !== undefined ? `₹${item[field]}` : <span style={{color: '#999999'}}>-</span>}
+                                                                            </div>
+                                                                        ))
+                                                                    )}
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                ))}
+                                                    );
+                                                })}
                                             </div>
                                         )}
                                     </div>
