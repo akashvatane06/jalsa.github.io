@@ -3,6 +3,7 @@ import HomePage from './components/HomePage';
 import CategoryPage from './components/CategoryPage';
 import ItemsPage from './components/ItemsPage';
 import Modal from './components/Modal';
+import { useSwipeGesture } from './hooks/useSwipeGesture';
 import './App.css';
 
 function App() {
@@ -189,8 +190,36 @@ function App() {
         setSearchQueries(prev => ({ ...prev, [view]: value }));
     };
 
+    // Mobile swipe gesture support
+    // Swipe left to go back, swipe right to go forward (if available)
+    const handleSwipeLeft = () => {
+        // Only allow swipe back if not on home page
+        if (currentView !== 'home') {
+            navigateBack();
+        }
+    };
+
+    const handleSwipeRight = () => {
+        // Swipe right to go forward (if history allows)
+        if (window.history.length > 1) {
+            window.history.forward();
+        }
+    };
+
+    // Apply swipe gestures to the app container
+    const swipeRef = useSwipeGesture(
+        handleSwipeLeft,
+        handleSwipeRight,
+        {
+            threshold: 50, // Minimum 50px swipe
+            maxVerticalDistance: 100, // Allow some vertical movement
+            preventDefault: true, // Prevent scrolling during horizontal swipe
+            enabled: true
+        }
+    );
+
     return (
-        <div className="App">
+        <div className="App" ref={swipeRef}>
             {currentView === 'home' && (
                 <HomePage
                     onNavigateToCategory={navigateToCategory}
