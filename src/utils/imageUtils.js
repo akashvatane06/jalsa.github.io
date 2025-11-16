@@ -96,7 +96,7 @@ function createGradientPlaceholder(category, subcategory = null) {
 
 // Local image paths (fallback when Pexels is down)
 // Note: Paths include base path for GitHub Pages deployment
-const BASE_PATH = '/jalsa.github.io';
+const BASE_PATH = '/jalsa.github.io'; // For project site at /jalsa.github.io/
 const localImages = {
     category: {
         drinks: `${BASE_PATH}/images/category/drinks.jpg`,

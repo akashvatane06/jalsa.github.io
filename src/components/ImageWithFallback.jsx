@@ -66,6 +66,8 @@ const ImageWithFallback = ({
             style={style}
             onError={handleError}
             loading="lazy"
+            decoding="async"
+            fetchpriority={src && src.includes('logo') ? 'high' : 'auto'}
         />
     );
 };
