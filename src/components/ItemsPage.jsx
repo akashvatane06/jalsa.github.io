@@ -160,18 +160,9 @@ const ItemsPage = ({ category, subcategory, onNavigateBack, onOpenModal, searchQ
                 <button className="back-btn" onClick={onNavigateBack}>
                     <span className="back-arrow">←</span>
                 </button>
-                <div className="header-content-wrapper">
-                    <h2 className={`header-title ${isFoodCategory || isDrinksCategory || isCigarettesCategory ? 'tandoori-header' : ''}`}>
-                        {displayName}
-                    </h2>
-                    {(isDrinksCategory || isCigarettesCategory) && headerPricingFields.length > 0 && (
-                        <div className="header-pricing-labels">
-                            {headerPricingFields.map(field => (
-                                <span key={field} className="header-pricing-label">{getFieldLabel(field)}</span>
-                            ))}
-                        </div>
-                    )}
-                </div>
+                <h2 className={`header-title ${isFoodCategory || isDrinksCategory || isCigarettesCategory ? 'tandoori-header' : ''}`}>
+                    {displayName}
+                </h2>
                 <div className="spacer"></div>
             </div>
 
@@ -478,7 +469,6 @@ const ItemsPage = ({ category, subcategory, onNavigateBack, onOpenModal, searchQ
                                                         <div className="list-item-content drinks-item-content">
                                                             <div className="list-item-name drinks-item-name">
                                                                 {item.name}
-                                                                {isCigarettesCategory && <span className="item-category-badge">{cat}</span>}
                                                             </div>
                                                             <div className="list-item-pricing drinks-item-pricing">
                                                                 {pricingFields.map(field => (
