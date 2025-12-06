@@ -326,8 +326,8 @@
 
 /* Responsive Design */
 
-/* Large Tablets and Small Desktops */
-@media (max-width: 1024px) {
+/* Large Tablets and Small Desktops (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
     .offer-popup-content {
         max-width: 85vw;
         max-height: 90vh;
@@ -338,8 +338,8 @@
     }
 }
 
-/* Tablets */
-@media (max-width: 768px) {
+/* Tablets (641px to 768px) */
+@media (min-width: 641px) and (max-width: 768px) {
     .offer-popup-content {
         max-width: 90vw;
         max-height: 90vh;
@@ -351,8 +351,8 @@
     }
 }
 
-/* Large Mobile Devices */
-@media (max-width: 640px) {
+/* Large Mobile Devices (481px to 640px) */
+@media (min-width: 481px) and (max-width: 640px) {
     .offer-popup-content {
         max-width: 95vw;
         max-height: 95vh;
@@ -365,8 +365,8 @@
     }
 }
 
-/* Small Mobile Devices */
-@media (max-width: 480px) {
+/* Small Mobile Devices (361px to 480px) */
+@media (min-width: 361px) and (max-width: 480px) {
     .offer-popup-content {
         max-width: 95vw;
         max-height: 95vh;
@@ -396,7 +396,7 @@
     }
 }
 
-/* Extra Small Mobile Devices */
+/* Extra Small Mobile Devices (up to 360px) */
 @media (max-width: 360px) {
     .offer-popup-content {
         max-width: 98vw;
@@ -418,8 +418,8 @@
     }
 }
 
-/* Landscape Orientation for Mobile */
-@media (max-width: 768px) and (orientation: landscape) {
+/* Landscape Orientation for Mobile and Tablets */
+@media (max-width: 1024px) and (orientation: landscape) {
     .offer-popup-content {
         max-width: 90vw;
         max-height: 95vh;
