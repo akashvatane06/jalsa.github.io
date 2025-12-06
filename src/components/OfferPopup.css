@@ -326,72 +326,28 @@
 
 /* Responsive Design */
 
-/* Desktop (1024px and above) - Same as Small Mobile */
-@media (min-width: 1025px) {
-    .offer-popup-content {
-        max-width: 95vw;
-        max-height: 95vh;
-        border-radius: 16px;
-        margin: 10px;
-        padding: 0;
-    }
-
-    .offer-image-section {
-        width: 100%;
-        height: auto;
-    }
-
-    .offer-image {
-        width: 100%;
-        max-width: 100%;
-        max-height: 85vh;
-        object-fit: contain;
-    }
-}
-
-/* Large Tablets and Small Desktops (769px to 1024px) - Same as Small Mobile */
+/* Large Tablets and Small Desktops (769px to 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     .offer-popup-content {
-        max-width: 95vw;
-        max-height: 95vh;
-        border-radius: 16px;
-        margin: 10px;
-        padding: 0;
-    }
-
-    .offer-image-section {
-        width: 100%;
-        height: auto;
+        max-width: 85vw;
+        max-height: 90vh;
     }
 
     .offer-image {
-        width: 100%;
-        max-width: 100%;
         max-height: 85vh;
-        object-fit: contain;
     }
 }
 
-/* Tablets (641px to 768px) - Same as Small Mobile */
+/* Tablets (641px to 768px) */
 @media (min-width: 641px) and (max-width: 768px) {
     .offer-popup-content {
-        max-width: 95vw;
-        max-height: 95vh;
-        border-radius: 16px;
-        margin: 10px;
-        padding: 0;
-    }
-
-    .offer-image-section {
-        width: 100%;
-        height: auto;
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 20px;
     }
 
     .offer-image {
-        width: 100%;
-        max-width: 100%;
         max-height: 85vh;
-        object-fit: contain;
     }
 }
 
