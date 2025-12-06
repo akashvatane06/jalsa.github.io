@@ -1652,7 +1652,7 @@ body {
 
 .drinks-item-name {
     font-family: 'Inter', sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     color: #1c1c1c;
     flex: 0 0 auto;
@@ -1735,7 +1735,7 @@ body {
     }
     
     .drinks-item-name {
-        font-size: 12px;
+        font-size: 14px;
         min-width: 80px;
         width: 80px;
         flex: 0 0 auto;
@@ -1796,7 +1796,7 @@ body {
     }
     
     .drinks-item-name {
-        font-size: 13px;
+        font-size: 15px;
         min-width: 90px;
         width: 90px;
         flex: 0 0 auto;
@@ -1857,7 +1857,7 @@ body {
     }
     
     .drinks-item-name {
-        font-size: 12px;
+        font-size: 14px;
         min-width: 70px;
         width: 70px;
         flex: 0 0 auto;
@@ -1918,7 +1918,7 @@ body {
     }
     
     .drinks-item-name {
-        font-size: 11px;
+        font-size: 13px;
         min-width: 70px;
         width: 70px;
         flex: 0 0 auto;
@@ -1981,7 +1981,7 @@ body {
     }
     
     .drinks-item-name {
-        font-size: 10px;
+        font-size: 13px;
         min-width: 60px;
         width: 60px;
         flex: 0 0 auto;
@@ -2045,7 +2045,7 @@ body {
     }
     
     .drinks-item-name {
-        font-size: 15px;
+        font-size: 16px;
     }
     
     .drinks-price-cell {
@@ -2092,7 +2092,7 @@ body {
     }
     
     .drinks-item-name {
-        font-size: 16px;
+        font-size: 17px;
     }
     
     .drinks-price-cell {
@@ -2117,6 +2117,10 @@ body {
         font-size: 17px;
         color: #1c1c1c !important;
     }
+    
+    .drinks-item-name {
+        font-size: 17px;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -2131,6 +2135,10 @@ body {
     .list-price {
         font-size: 18px;
         color: #1c1c1c !important;
+    }
+    
+    .drinks-item-name {
+        font-size: 18px;
     }
 }
 
