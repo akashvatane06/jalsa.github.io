@@ -1518,7 +1518,6 @@ body {
 /* Tandoori List View - Professional List Style */
 .tandoori-list {
     width: 100%;
-    overflow-x: hidden;
     box-sizing: border-box;
     background: #ffffff;
     border-radius: 12px;
@@ -1600,6 +1599,7 @@ body {
     gap: 12px;
     box-sizing: border-box;
     width: 100%;
+    position: relative;
 }
 
 .drinks-header-name {
@@ -1626,6 +1626,7 @@ body {
     justify-content: flex-end;
     box-sizing: border-box;
     padding-right: 0;
+    min-width: 0; /* Allow flex item to shrink */
 }
 
 .drinks-header-price {
@@ -1656,6 +1657,7 @@ body {
     gap: 12px;
     box-sizing: border-box;
     width: 100%;
+    position: relative;
 }
 
 .drinks-item-name {
@@ -1696,6 +1698,7 @@ body {
     justify-content: flex-end;
     box-sizing: border-box;
     padding-right: 0;
+    min-width: 0; /* Allow flex item to shrink */
 }
 
 .drinks-price-cell {
@@ -1735,53 +1738,83 @@ body {
         font-size: 14px;
     }
     
-    /* Drinks Section List Items */
+    /* Drinks Section List Items - Adjusted font sizes for mobile */
     .drinks-item-content {
-        gap: 10px;
-        padding: 0 12px;
+        gap: 8px;
+        padding: 0 16px;
+        width: 100%;
     }
     
     .drinks-list-header {
-        padding: 10px 12px;
-        gap: 10px;
-    }
-    
-    .drinks-header-prices,
-    .drinks-item-pricing {
+        padding: 12px 16px;
         gap: 8px;
+        width: 100%;
     }
     
     .drinks-header-name {
         font-size: 10px;
-        min-width: 80px;
-        width: 80px;
-        flex: 0 0 auto;
+        min-width: 0;
+        flex: 1;
+        max-width: 40%;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
     }
     
     .drinks-item-name {
         font-size: 14px;
-        min-width: 80px;
-        width: 80px;
-        flex: 0 0 auto;
+        min-width: 0;
+        flex: 1;
+        max-width: 40%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.4;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+    }
+    
+    .drinks-header-prices {
+        gap: 3px;
+        flex: 1;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+    }
+    
+    .drinks-item-pricing {
+        gap: 3px;
+        flex: 1;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
     }
     
     .drinks-header-price {
-        font-size: 8px;
-        min-width: 35px;
-        width: 35px;
+        font-size: 9px;
+        min-width: 40px;
+        width: auto;
+        flex-shrink: 0;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        text-align: center;
+        padding: 0 2px;
+        white-space: nowrap;
     }
     
     .drinks-price-cell {
         font-size: 10px;
-        min-width: 35px;
-        width: 35px;
+        min-width: 40px;
+        width: auto;
+        flex-shrink: 0;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        padding: 0 2px;
+        white-space: nowrap;
     }
 }
 
 /* Large Phones and Small Tablets (640px - 767px) */
 @media (max-width: 767px) and (min-width: 640px) {
     .tandoori-list-item {
-        padding: 12px 18px;
+        padding: 12px 0;
     }
     
     /* Food Section List Items */
@@ -1797,45 +1830,76 @@ body {
         font-size: 15px;
     }
     
-    /* Drinks Section List Items */
+    /* Drinks Section List Items - Adjusted font sizes for mobile */
     .drinks-item-content {
-        gap: 10px;
-        padding: 0 12px;
+        gap: 8px;
+        padding: 0 18px;
+        width: 100%;
     }
     
     .drinks-list-header {
-        padding: 10px 12px;
-        gap: 10px;
-    }
-    
-    .drinks-header-prices,
-    .drinks-item-pricing {
-        gap: 10px;
+        padding: 12px 18px;
+        gap: 8px;
+        width: 100%;
     }
     
     .drinks-header-name {
         font-size: 10px;
-        min-width: 90px;
-        width: 90px;
+        min-width: 0;
+        flex: 1;
+        max-width: 40%;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
     }
     
     .drinks-item-name {
         font-size: 15px;
-        min-width: 90px;
-        width: 90px;
-        flex: 0 0 auto;
+        min-width: 0;
+        flex: 1;
+        max-width: 40%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.4;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+    }
+    
+    .drinks-header-prices {
+        gap: 4px;
+        flex: 1;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+    }
+    
+    .drinks-item-pricing {
+        gap: 4px;
+        flex: 1;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
     }
     
     .drinks-header-price {
         font-size: 9px;
-        min-width: 40px;
-        width: 40px;
+        min-width: 42px;
+        width: auto;
+        flex-shrink: 0;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        text-align: center;
+        padding: 0 2px;
+        white-space: nowrap;
     }
     
     .drinks-price-cell {
-        font-size: 11px;
-        min-width: 40px;
-        width: 40px;
+        font-size: 10px;
+        min-width: 42px;
+        width: auto;
+        flex-shrink: 0;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        padding: 0 2px;
+        white-space: nowrap;
     }
 }
 
@@ -1858,45 +1922,76 @@ body {
         font-size: 14px;
     }
     
-    /* Drinks Section List Items */
+    /* Drinks Section List Items - Adjusted font sizes for mobile */
     .drinks-item-content {
-        gap: 10px;
-        padding: 0 12px;
+        gap: 6px;
+        padding: 0 16px;
+        width: 100%;
     }
     
     .drinks-list-header {
-        padding: 10px 12px;
-        gap: 10px;
-    }
-    
-    .drinks-header-prices,
-    .drinks-item-pricing {
-        gap: 10px;
+        padding: 12px 16px;
+        gap: 6px;
+        width: 100%;
     }
     
     .drinks-header-name {
         font-size: 9px;
-        min-width: 70px;
-        width: 70px;
+        min-width: 0;
+        flex: 1;
+        max-width: 35%;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
     }
     
     .drinks-item-name {
         font-size: 14px;
-        min-width: 70px;
-        width: 70px;
-        flex: 0 0 auto;
+        min-width: 0;
+        flex: 1;
+        max-width: 35%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.4;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+    }
+    
+    .drinks-header-prices {
+        gap: 2px;
+        flex: 1;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+    }
+    
+    .drinks-item-pricing {
+        gap: 2px;
+        flex: 1;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
     }
     
     .drinks-header-price {
         font-size: 8px;
-        min-width: 35px;
-        width: 35px;
+        min-width: 36px;
+        width: auto;
+        flex-shrink: 0;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        text-align: center;
+        padding: 0 2px;
+        white-space: nowrap;
     }
     
     .drinks-price-cell {
-        font-size: 11px;
-        min-width: 35px;
-        width: 35px;
+        font-size: 9px;
+        min-width: 36px;
+        width: auto;
+        flex-shrink: 0;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        padding: 0 2px;
+        white-space: nowrap;
     }
 }
 
@@ -1919,46 +2014,77 @@ body {
         font-size: 13px;
     }
     
-    /* Drinks Section List Items */
+    /* Drinks Section List Items - Adjusted font sizes for mobile */
     .drinks-item-content {
-        gap: 6px;
-        padding: 0 8px;
+        gap: 5px;
+        padding: 0 14px;
+        width: 100%;
     }
     
     .drinks-list-header {
-        padding: 8px 8px;
-        gap: 6px;
-    }
-    
-    .drinks-header-prices,
-    .drinks-item-pricing {
+        padding: 10px 14px;
         gap: 5px;
+        width: 100%;
     }
     
     .drinks-header-name {
         font-size: 8px;
-        min-width: 70px;
-        width: 70px;
+        min-width: 0;
+        flex: 1;
+        max-width: 35%;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
     }
     
     .drinks-item-name {
         font-size: 13px;
-        min-width: 70px;
-        width: 70px;
-        flex: 0 0 auto;
+        min-width: 0;
+        flex: 1;
+        max-width: 35%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.4;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+    }
+    
+    .drinks-header-prices {
+        gap: 1px;
+        flex: 1;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+    }
+    
+    .drinks-item-pricing {
+        gap: 1px;
+        flex: 1;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
     }
     
     .drinks-header-price {
         font-size: 7px;
-        letter-spacing: 0;
-        min-width: 32px;
-        width: 32px;
+        letter-spacing: 0.1px;
+        min-width: 34px;
+        width: auto;
+        flex-shrink: 0;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        text-align: center;
+        padding: 0 2px;
+        white-space: nowrap;
     }
     
     .drinks-price-cell {
-        font-size: 9px;
-        min-width: 32px;
-        width: 32px;
+        font-size: 8px;
+        min-width: 34px;
+        width: auto;
+        flex-shrink: 0;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        padding: 0 2px;
+        white-space: nowrap;
     }
 }
 
@@ -1981,47 +2107,77 @@ body {
         font-size: 13px;
     }
     
-    /* Drinks Section List Items */
+    /* Drinks Section List Items - Adjusted font sizes for mobile */
     .drinks-item-content {
         gap: 4px;
-        padding: 0 6px;
+        padding: 0 12px;
+        width: 100%;
     }
     
     .drinks-list-header {
-        padding: 8px 6px;
+        padding: 10px 12px;
         gap: 4px;
-    }
-    
-    .drinks-header-prices,
-    .drinks-item-pricing {
-        gap: 3px;
+        width: 100%;
     }
     
     .drinks-header-name {
         font-size: 7px;
-        min-width: 60px;
-        width: 60px;
-        flex: 0 0 auto;
+        min-width: 0;
+        flex: 1;
+        max-width: 30%;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
     }
     
     .drinks-item-name {
         font-size: 13px;
-        min-width: 60px;
-        width: 60px;
-        flex: 0 0 auto;
+        min-width: 0;
+        flex: 1;
+        max-width: 30%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        line-height: 1.4;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+    }
+    
+    .drinks-header-prices {
+        gap: 1px;
+        flex: 1;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+    }
+    
+    .drinks-item-pricing {
+        gap: 1px;
+        flex: 1;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
     }
     
     .drinks-header-price {
-        font-size: 6px;
-        letter-spacing: 0;
-        min-width: 26px;
-        width: 26px;
+        font-size: 7px;
+        letter-spacing: 0.1px;
+        min-width: 32px;
+        width: auto;
+        flex-shrink: 0;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        text-align: center;
+        padding: 0 2px;
+        white-space: nowrap;
     }
     
     .drinks-price-cell {
         font-size: 8px;
-        min-width: 26px;
-        width: 26px;
+        min-width: 32px;
+        width: auto;
+        flex-shrink: 0;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        padding: 0 2px;
+        white-space: nowrap;
     }
 }
 
