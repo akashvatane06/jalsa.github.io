@@ -95,23 +95,21 @@
 
 /* Offer Image Section */
 .offer-image-section {
-    width: 100%;
+    width: auto;
     height: auto;
     overflow: hidden;
     background: #ffffff;
     display: block;
     line-height: 0;
-    position: relative;
 }
 
 .offer-image {
-    width: 100%;
+    width: auto;
     height: auto;
-    max-width: 100%;
+    max-width: 90vw;
     max-height: 90vh;
     display: block;
     object-fit: contain;
-    object-position: center;
 }
 
 /* Header Section with Shapes (kept for reference, can be removed if not needed) */
@@ -322,71 +320,23 @@
 }
 
 /* Responsive Design */
-
-/* Tablets (641px to 1024px) */
-@media (min-width: 641px) and (max-width: 1024px) {
-    .offer-popup-content {
-        max-width: 90vw;
-        max-height: 90vh;
-    }
-
-    .offer-image {
-        max-height: 85vh;
-    }
-}
-
-/* Large Mobile Devices (481px to 640px) */
-@media (min-width: 481px) and (max-width: 640px) {
-    .offer-popup {
-        padding: 15px;
-    }
-
+@media (max-width: 480px) {
     .offer-popup-content {
         max-width: 95vw;
         max-height: 95vh;
         border-radius: 20px;
+        margin: 10px;
     }
 
     .offer-image-section {
-        width: 100%;
-    }
-
-    .offer-image {
-        max-height: 90vh;
-    }
-}
-
-/* Small Mobile Devices (up to 480px) */
-@media (max-width: 480px) {
-    .offer-popup {
-        padding: 10px;
-    }
-
-    .offer-popup-content {
-        max-width: 98vw;
-        max-height: 96vh;
-        border-radius: 18px;
-        margin: 0;
-    }
-
-    .offer-image-section {
-        width: 100%;
+        width: auto;
         height: auto;
     }
 
     .offer-image {
-        width: 100%;
-        max-width: 100%;
-        max-height: 90vh;
+        max-width: 95vw;
+        max-height: 95vh;
         object-fit: contain;
-    }
-
-    .offer-popup-close {
-        width: 32px;
-        height: 32px;
-        font-size: 20px;
-        top: 10px;
-        right: 10px;
     }
 
     .offer-header-section {
@@ -451,47 +401,6 @@
 
     .offer-logo-tagline {
         font-size: 12px;
-    }
-}
-
-/* Extra Small Mobile Devices (up to 360px) */
-@media (max-width: 360px) {
-    .offer-popup {
-        padding: 5px;
-    }
-
-    .offer-popup-content {
-        max-width: 99vw;
-        max-height: 98vh;
-        border-radius: 16px;
-    }
-
-    .offer-image {
-        max-height: 92vh;
-    }
-
-    .offer-popup-close {
-        width: 30px;
-        height: 30px;
-        font-size: 18px;
-        top: 8px;
-        right: 8px;
-    }
-}
-
-/* Landscape Orientation for Mobile and Tablets */
-@media (max-width: 1024px) and (orientation: landscape) {
-    .offer-popup {
-        padding: 5px;
-    }
-
-    .offer-popup-content {
-        max-width: 95vw;
-        max-height: 98vh;
-    }
-
-    .offer-image {
-        max-height: 95vh;
     }
 }
 
