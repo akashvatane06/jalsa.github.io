@@ -101,39 +101,27 @@ const ItemsPage = ({ category, subcategory, onNavigateBack, onOpenModal, searchQ
 
     // Calculate available pricing fields for drinks header
     const headerPricingFields = useMemo(() => {
-        if (isDrinksCategory && items && items.length > 0) {
-            const fieldOrder = ['ml30', 'ml60', 'ml90', 'nip', 'pint', 'full', 'bottle', 'tower', 'port', 'price'];
-            const availableFields = new Set();
-            
-            items.forEach(item => {
-                if (item.ml30 !== undefined) availableFields.add('ml30');
-                if (item.ml60 !== undefined) availableFields.add('ml60');
-                if (item.ml90 !== undefined) availableFields.add('ml90');
-                if (item.nip !== undefined) availableFields.add('nip');
-                if (item.pint !== undefined) availableFields.add('pint');
-                if (item.full !== undefined) availableFields.add('full');
-                if (item.bottle !== undefined) availableFields.add('bottle');
-                if (item.tower !== undefined) availableFields.add('tower');
-                if (item.port !== undefined) availableFields.add('port');
-                if (item.price !== undefined) availableFields.add('price');
-            });
-            
-            return fieldOrder.filter(field => availableFields.has(field));
-        } else if (isCigarettesCategory && items && items.length > 0) {
-            const fieldOrder = ['single', 'packet', 'carton', 'price'];
-            const availableFields = new Set();
-            
-            items.forEach(item => {
-                if (item.single !== undefined) availableFields.add('single');
-                if (item.packet !== undefined) availableFields.add('packet');
-                if (item.carton !== undefined) availableFields.add('carton');
-                if (item.price !== undefined) availableFields.add('price');
-            });
-            
-            return fieldOrder.filter(field => availableFields.has(field));
-        }
-        return [];
-    }, [isDrinksCategory, isCigarettesCategory, items]);
+        if (!isDrinksCategory || !items || items.length === 0) return [];
+        
+        const fieldOrder = ['ml30', 'ml60', 'ml90', 'nip', 'pint', 'full', 'bottle', 'tower', 'port', 'price'];
+        const availableFields = new Set();
+        
+        // Check all items for available fields
+        items.forEach(item => {
+            if (item.ml30 !== undefined) availableFields.add('ml30');
+            if (item.ml60 !== undefined) availableFields.add('ml60');
+            if (item.ml90 !== undefined) availableFields.add('ml90');
+            if (item.nip !== undefined) availableFields.add('nip');
+            if (item.pint !== undefined) availableFields.add('pint');
+            if (item.full !== undefined) availableFields.add('full');
+            if (item.bottle !== undefined) availableFields.add('bottle');
+            if (item.tower !== undefined) availableFields.add('tower');
+            if (item.port !== undefined) availableFields.add('port');
+            if (item.price !== undefined) availableFields.add('price');
+        });
+        
+        return fieldOrder.filter(field => availableFields.has(field));
+    }, [isDrinksCategory, items]);
 
     const getFieldLabel = (field) => {
         const labels = {
@@ -146,9 +134,6 @@ const ItemsPage = ({ category, subcategory, onNavigateBack, onOpenModal, searchQ
             bottle: 'Bottle',
             tower: 'Tower',
             port: 'Port',
-            single: 'Single',
-            packet: 'Packet',
-            carton: 'Carton',
             price: 'Price'
         };
         return labels[field] || field;
@@ -160,18 +145,9 @@ const ItemsPage = ({ category, subcategory, onNavigateBack, onOpenModal, searchQ
                 <button className="back-btn" onClick={onNavigateBack}>
                     <span className="back-arrow">←</span>
                 </button>
-                <div className="header-content-wrapper">
                     <h2 className={`header-title ${isFoodCategory || isDrinksCategory || isCigarettesCategory ? 'tandoori-header' : ''}`}>
                         {displayName}
                     </h2>
-                    {(isDrinksCategory || isCigarettesCategory) && headerPricingFields.length > 0 && (
-                        <div className="header-pricing-labels">
-                            {headerPricingFields.map(field => (
-                                <span key={field} className="header-pricing-label">{getFieldLabel(field)}</span>
-                            ))}
-                        </div>
-                    )}
-                </div>
                 <div className="spacer"></div>
             </div>
 
@@ -476,10 +452,7 @@ const ItemsPage = ({ category, subcategory, onNavigateBack, onOpenModal, searchQ
                                                         className="tandoori-list-item"
                                                     >
                                                         <div className="list-item-content drinks-item-content">
-                                                            <div className="list-item-name drinks-item-name">
-                                                                {item.name}
-                                                                {isCigarettesCategory && <span className="item-category-badge">{cat}</span>}
-                                                            </div>
+                                                            <div className="list-item-name drinks-item-name">{item.name}</div>
                                                             <div className="list-item-pricing drinks-item-pricing">
                                                                 {pricingFields.map(field => (
                                                                     <div key={field} className="drinks-price-cell">
