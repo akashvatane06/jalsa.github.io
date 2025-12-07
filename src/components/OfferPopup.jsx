@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './OfferPopup.css';
 
+// Configuration: Change this image filename when you want to update the offer image
+// IMPORTANT: 
+// 1. Place new images in: public/images/offer/
+// 2. Use filenames WITHOUT spaces (e.g., "offer-2025-12-05.jpeg" instead of "WhatsApp Image 2025-12-05 at 12.44.37 PM.jpeg")
+// 3. Update this constant with the new filename
+const OFFER_IMAGE_FILENAME = 'WhatsApp Image 2025-12-07 at 2.41.33 PM.jpeg';
+
 const OfferPopup = () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -53,12 +60,12 @@ const OfferPopup = () => {
                 {/* Offer Image Section */}
                 <div className="offer-image-section">
                     <img 
-                        src={`${import.meta.env.BASE_URL}images/offer/WhatsApp Image 2025-12-05 at 12.44.37 PM.jpeg`}
+                        src={`${import.meta.env.BASE_URL}images/offer/${encodeURIComponent(OFFER_IMAGE_FILENAME)}`}
                         alt="Jalsa New Year Offer"
                         className="offer-image"
                         onError={(e) => {
                             // Fallback if image doesn't load
-                            console.error('Offer image failed to load');
+                            console.error('Offer image failed to load:', OFFER_IMAGE_FILENAME);
                             e.target.style.display = 'none';
                         }}
                     />
