@@ -4,6 +4,7 @@ import CategoryPage from './components/CategoryPage';
 import ItemsPage from './components/ItemsPage';
 import Modal from './components/Modal';
 import OfferPopup from './components/OfferPopup';
+import Footer from './components/Footer';
 import { useSwipeGesture } from './hooks/useSwipeGesture';
 import './App.css';
 
@@ -221,34 +222,38 @@ function App() {
 
     return (
         <div className="App" ref={swipeRef}>
-            {currentView === 'home' && (
-                <HomePage
-                    onNavigateToCategory={navigateToCategory}
-                    onNavigateToItems={navigateToItems}
-                    onOpenModal={openModal}
-                />
-            )}
+            <div className="AppMain">
+                {currentView === 'home' && (
+                    <HomePage
+                        onNavigateToCategory={navigateToCategory}
+                        onNavigateToItems={navigateToItems}
+                        onOpenModal={openModal}
+                    />
+                )}
 
-            {currentView === 'category' && currentCategory && (
-                <CategoryPage
-                    category={currentCategory}
-                    onNavigateBack={navigateToHome}
-                    onNavigateToItems={navigateToItems}
-                    searchQuery={searchQueries.category}
-                    onSearchChange={(value) => handleSearchChange('category', value)}
-                />
-            )}
+                {currentView === 'category' && currentCategory && (
+                    <CategoryPage
+                        category={currentCategory}
+                        onNavigateBack={navigateToHome}
+                        onNavigateToItems={navigateToItems}
+                        searchQuery={searchQueries.category}
+                        onSearchChange={(value) => handleSearchChange('category', value)}
+                    />
+                )}
 
-            {currentView === 'items' && currentCategory && currentSubcategory && (
-                <ItemsPage
-                    category={currentCategory}
-                    subcategory={currentSubcategory}
-                    onNavigateBack={navigateBack}
-                    onOpenModal={openModal}
-                    searchQuery={searchQueries.items}
-                    onSearchChange={(value) => handleSearchChange('items', value)}
-                />
-            )}
+                {currentView === 'items' && currentCategory && currentSubcategory && (
+                    <ItemsPage
+                        category={currentCategory}
+                        subcategory={currentSubcategory}
+                        onNavigateBack={navigateBack}
+                        onOpenModal={openModal}
+                        searchQuery={searchQueries.items}
+                        onSearchChange={(value) => handleSearchChange('items', value)}
+                    />
+                )}
+            </div>
+
+            <Footer />
 
             <Modal
                 item={modalItem}

@@ -1,0 +1,137 @@
+.app-footer {
+  width: 100%;
+  border-top: 1px solid #f0f0f0;
+  background: #ffffff;
+}
+
+.app-footer__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 14px 20px;
+}
+
+.app-footer__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.app-footer__line {
+  margin: 0;
+  max-width: 100%;
+}
+
+.app-footer__desktop {
+  display: inline;
+}
+
+.app-footer__mobile {
+  display: none;
+}
+
+.app-footer__text {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #666666;
+  line-height: 1.5;
+}
+
+.app-footer__link {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.app-footer__link:hover {
+  text-decoration: underline;
+}
+
+.app-footer__sep {
+  color: #cfcfcf;
+  font-size: 12px;
+}
+
+/* Mobile: compact one-line footer (no horizontal swipe) */
+@media (max-width: 768px) {
+  .app-footer__inner {
+    padding: 8px 10px;
+  }
+
+  .app-footer__row {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .app-footer__line {
+    white-space: nowrap;
+    overflow: hidden; /* prevent any page horizontal scroll */
+  }
+
+  .app-footer__desktop {
+    display: none;
+  }
+
+  .app-footer__mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-width: 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .app-footer__text,
+  .app-footer__link,
+  .app-footer__sep {
+    font-size: clamp(7px, 2.15vw, 9px);
+    line-height: 1.15;
+    letter-spacing: -0.15px;
+  }
+
+  /* Keep contact info always visible; shrink the "Designed..." part first */
+  .app-footer__mobile-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .app-footer__mobile-label {
+    flex: 0 0 auto;
+    opacity: 0.85;
+  }
+
+  .app-footer__link {
+    flex: 0 0 auto;
+  }
+
+  .app-footer__sep {
+    margin: 0 2px;
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 360px) {
+  .app-footer__inner {
+    padding: 7px 8px;
+  }
+
+  .app-footer__mobile {
+    gap: 3px;
+  }
+
+  .app-footer__text,
+  .app-footer__link,
+  .app-footer__sep {
+    font-size: clamp(6.5px, 2.05vw, 8.5px);
+  }
+}
+
