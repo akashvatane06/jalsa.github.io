@@ -63,13 +63,13 @@
   }
 
   .app-footer__row {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
   }
 
   .app-footer__line {
-    white-space: nowrap;
-    overflow: hidden; /* prevent any page horizontal scroll */
+    white-space: normal;
+    overflow: visible;
   }
 
   .app-footer__desktop {
@@ -80,36 +80,35 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    flex-wrap: wrap;
+    gap: 6px 8px;
     min-width: 0;
     width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
+    white-space: normal;
+    overflow: visible;
   }
 
   .app-footer__text,
   .app-footer__link,
   .app-footer__sep {
-    font-size: clamp(6.5px, 2.05vw, 8.5px);
-    line-height: 1.15;
+    font-size: clamp(10px, 2.6vw, 12px);
+    line-height: 1.2;
     letter-spacing: -0.15px;
   }
 
-  /* Keep contact info always visible; shrink the "Designed..." part first */
   .app-footer__mobile-name {
-    flex: 1 1 auto;
+    flex: 1 1 100%;
     min-width: 0;
-    /* keep full sentence visible */
-    flex: 0 0 auto;
+    text-align: center;
   }
 
   .app-footer__mobile-label {
-    flex: 0 0 auto;
     opacity: 0.85;
   }
 
   .app-footer__link {
-    flex: 0 0 auto;
+    display: inline-block;
+    max-width: 100%;
   }
 
   .app-footer__sep {
@@ -130,7 +129,7 @@
   .app-footer__text,
   .app-footer__link,
   .app-footer__sep {
-    font-size: clamp(6.5px, 2.05vw, 8.5px);
+    font-size: clamp(9px, 3.2vw, 11px);
   }
 }
 
