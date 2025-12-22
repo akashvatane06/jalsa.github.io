@@ -1,13 +1,18 @@
 .app-footer {
   width: 100%;
-  border-top: 1px solid #f0f0f0;
-  background: #ffffff;
+  --footer-text: #374151; /* light black */
+  --footer-muted: rgba(55, 65, 81, 0.55);
+
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.04) 0%, #ffffff 60%);
+  box-shadow: 0 -10px 28px rgba(0, 0, 0, 0.07);
 }
 
 .app-footer__inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 14px 20px;
+  padding: 16px 20px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
 }
 
 .app-footer__row {
@@ -34,32 +39,49 @@
 
 .app-footer__text {
   font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  color: #666666;
-  line-height: 1.5;
+  font-size: 11.25px;
+  color: var(--footer-text);
+  line-height: 1.45;
+  font-weight: 400;
 }
 
 .app-footer__link {
-  color: inherit;
-  font-weight: 600;
-  text-decoration: none;
+  color: rgba(17, 24, 39, 0.78);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: rgba(17, 24, 39, 0.25);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
   overflow-wrap: anywhere;
   word-break: break-word;
+  transition: color 140ms ease, text-decoration-color 140ms ease;
 }
 
 .app-footer__link:hover {
-  text-decoration: underline;
+  color: rgba(17, 24, 39, 0.92);
+  text-decoration-color: rgba(17, 24, 39, 0.5);
+}
+
+.app-footer__link:focus-visible {
+  outline: 2px solid rgba(17, 24, 39, 0.35);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 .app-footer__sep {
-  color: #cfcfcf;
+  color: var(--footer-muted);
   font-size: 12px;
+}
+
+.app-footer strong {
+  font-weight: 500; /* avoid bold look */
 }
 
 /* Mobile: compact one-line footer (no horizontal swipe) */
 @media (max-width: 768px) {
   .app-footer__inner {
-    padding: 8px 10px;
+    padding: 10px 12px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
   }
 
   .app-footer__row {
@@ -81,7 +103,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 6px 8px;
+    gap: 4px 8px;
     min-width: 0;
     width: 100%;
     white-space: normal;
@@ -91,8 +113,8 @@
   .app-footer__text,
   .app-footer__link,
   .app-footer__sep {
-    font-size: clamp(10px, 2.6vw, 12px);
-    line-height: 1.2;
+    font-size: clamp(9.5px, 2.6vw, 11px);
+    line-height: 1.25;
     letter-spacing: -0.15px;
   }
 
@@ -100,6 +122,7 @@
     flex: 1 1 100%;
     min-width: 0;
     text-align: center;
+    color: rgba(55, 65, 81, 0.95);
   }
 
   .app-footer__mobile-label {
@@ -129,7 +152,7 @@
   .app-footer__text,
   .app-footer__link,
   .app-footer__sep {
-    font-size: clamp(9px, 3.2vw, 11px);
+    font-size: clamp(9px, 3.4vw, 10.5px);
   }
 }
 
