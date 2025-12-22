@@ -90,7 +90,7 @@
   .app-footer__text,
   .app-footer__link,
   .app-footer__sep {
-    font-size: clamp(7px, 2.15vw, 9px);
+    font-size: clamp(6.5px, 2.05vw, 8.5px);
     line-height: 1.15;
     letter-spacing: -0.15px;
   }
@@ -99,9 +99,8 @@
   .app-footer__mobile-name {
     flex: 1 1 auto;
     min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    /* keep full sentence visible */
+    flex: 0 0 auto;
   }
 
   .app-footer__mobile-label {
