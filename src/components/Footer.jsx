@@ -34,25 +34,24 @@ export default function Footer() {
               </span>
             </span>
 
-            {/* Mobile: compact one-line */}
+            {/* Mobile: responsive (wraps, no clipping) */}
             <span className="app-footer__mobile">
               <span className="app-footer__text app-footer__mobile-name">
                 Designed and developed by <strong>Akash Vatane</strong>
               </span>
-              <span className="app-footer__sep" aria-hidden="true">
-                |
+              <span className="app-footer__mobile-contact">
+                <span className="app-footer__text app-footer__mobile-label">Mobile:</span>
+                <a className="app-footer__link" href="tel:+919921870968">
+                  +919921870968
+                </a>
+                <span className="app-footer__sep" aria-hidden="true">
+                  |
+                </span>
+                <span className="app-footer__text app-footer__mobile-label">Email:</span>
+                <a className="app-footer__link" href="mailto:akashvatane06@gmail.com">
+                  akashvatane06@gmail.com
+                </a>
               </span>
-              <span className="app-footer__text app-footer__mobile-label">Mobile:</span>
-              <a className="app-footer__link" href="tel:+919921870968">
-                +919921870968
-              </a>
-              <span className="app-footer__sep" aria-hidden="true">
-                |
-              </span>
-              <span className="app-footer__text app-footer__mobile-label">Email:</span>
-              <a className="app-footer__link" href="mailto:akashvatane06@gmail.com">
-                akashvatane06@gmail.com
-              </a>
             </span>
           </p>
         </div>
