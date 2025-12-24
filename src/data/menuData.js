@@ -9,7 +9,7 @@ export const menuData = {
             { name: 'MCD No 1 Platinum', ml30: 120, ml60: 150, ml90: 190, nip: 340, category: 'Indian Whisky' },
             { name: 'Blenders Pride', ml30: 200, ml60: 250, ml90: 340, nip: 650, full: 2600, category: 'Premium Blend' },
             { name: 'Blenders Pride Reserve', ml30: 200, ml60: 300, ml90: 390, nip: 730, full: 2920, category: 'Premium Blend' },
-            { name: 'Oaksmith Blend', ml30: 140, ml60: 200, ml90: 280, nip: 540, full: null, category: 'Blended Whisky' },
+            { name: 'Oaksmith Blend', ml30: 190, ml60: 250, ml90: 350, nip: 620, full: null, category: 'Blended Whisky' },
             { name: 'Oaksmith Gold', ml30: 200, ml60: 300, ml90: 410, nip: 790, full: 3160, category: 'Premium Blend' },
             { name: 'Royal Stag', ml30: 160, ml60: 190, ml90: 240, nip: 470, full: 1880, category: 'Indian Whisky' },
             { name: 'Royal Stag Barrel', ml30: 180, ml60: 250, ml90: 310, nip: 590, category: 'Premium Blend' },
@@ -67,10 +67,11 @@ export const menuData = {
             { name: 'Teachers', ml30: 300, ml60: 500, ml90: 700, nip: 1360, full: 4200, category: 'Blended Scotch' },
             { name: '100 Pipers', ml30: 220, ml60: 380, ml90: 560, nip: 1080, category: 'Blended Scotch' },
             { name: 'Vat 69', ml30: 210, ml60: 380, ml90: 540, nip: 1060, category: 'Blended Scotch' },
-            { name: 'William Lawson', ml30: 210, ml60: 290, ml90: 440, nip: 850, category: 'Blended Scotch' },
+            { name: 'William Lawson', ml30: 240, ml60: 390, ml90: 490, nip: 950, category: 'Blended Scotch' },
             { name: 'Black & White', ml30: 320, ml60: 520, ml90: 720, nip: 1380, full: 5520, category: 'Blended Scotch' },
             { name: 'Ballantines', ml30: 250, ml60: 430, ml90: 630, nip: 1230, full: 3800, category: 'Blended Scotch' },
             { name: 'Black Dog Black Reserve', ml30: 320, ml60: 480, ml90: 680, nip: 1350, category: 'Blended Scotch' },
+            { name: 'Yello', ml30: 250, ml60: 430, ml90: 630, nip: 1230, full: 3900, category: 'Blended Scotch' },
             { name: 'Black Dog Triple Gold Reserve', ml30: 350, ml60: 500, ml90: 700, nip: 1450, category: 'Blended Scotch' },
             { name: 'Black Label', ml30: 510, ml60: 1010, ml90: 1410, nip: 2710, full: null, category: 'Premium Scotch' },
             { name: 'Teachers 50', ml30: 330, ml60: 560, ml90: 780, nip: 1400, category: 'Blended Scotch' },
@@ -111,7 +112,7 @@ export const menuData = {
             { name: 'Thunderbolt', bottle: 350, category: 'Beer' }
         ],
         gin: [
-            { name: 'Greater Than London', ml30: 210, ml60: 290, ml90: 440, nip: 850, category: 'London Dry Gin' },
+            { name: 'Greater Than London', ml30: 250, ml60: 420, ml90: 510, nip: 990, category: 'London Dry Gin' },
             { name: 'Blue Riband Gin', ml30: 150, ml60: 180, ml90: 230, nip: 430, category: 'Indian Gin' },
             { name: 'Blue Riband Duet', ml30: 150, ml60: 180, ml90: 230, nip: 430, category: 'Indian Gin' }
         ],

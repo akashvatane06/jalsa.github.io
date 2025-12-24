@@ -37,7 +37,7 @@ export default function Footer() {
             {/* Mobile: compact one-line */}
             <span className="app-footer__mobile">
               <span className="app-footer__text app-footer__mobile-name">
-                Designed and developed by <strong>Akash Vatane</strong>
+                Designed and Developed by <strong>Akash Vatane</strong>
               </span>
               <span className="app-footer__sep" aria-hidden="true">
                 |
