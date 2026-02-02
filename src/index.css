@@ -1672,6 +1672,10 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
 }
 
 .item-category-badge {

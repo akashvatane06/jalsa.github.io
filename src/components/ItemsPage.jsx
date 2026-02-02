@@ -384,7 +384,10 @@ const ItemsPage = ({ category, subcategory, onNavigateBack, onOpenModal, searchQ
                                                             className="tandoori-list-item"
                                                         >
                                                             <div className="list-item-content drinks-item-content">
-                                                                <div className="list-item-name drinks-item-name">{item.name}</div>
+                                                                <div className="list-item-name drinks-item-name">
+                                                                    <span>{item.name}</span>
+                                                                    {item.isNew && <span className="item-category-badge">New</span>}
+                                                                </div>
                                                                 <div className="list-item-pricing drinks-item-pricing">
                                                                     {hasSmallLarge ? (
                                                                         <div className="drinks-price-cell">
