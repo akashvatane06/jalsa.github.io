@@ -36,11 +36,11 @@ export const menuData = {
         ],
         rum: [
             { name: 'Old Monk', ml30: 130, ml60: 180, ml90: 230, nip: 430, category: 'Dark Rum' },
-            { name: 'Bacardi', ml30: 130, ml60: 230, ml90: 330, nip: 610, category: 'White Rum' },
+            { name: 'Bacardi', ml30: 210, ml60: 320, ml90: 440, nip: 850, category: 'White Rum' },
             { name: 'Captain Morgan', ml30: 90, ml60: 150, ml90: 180, nip: 330, category: 'Spiced Rum' },
             { name: 'Bacardi Black', ml30: 180, ml60: 210, ml90: 260, nip: 510, category: 'Dark Rum' },
             { name: 'MCD No 1 Celebration', ml30: 130, ml60: 180, ml90: 230, nip: 430, category: 'Indian Rum' },
-            { name: 'Bacardi Lemon', ml30: 210, ml60: 320, ml90: 400, nip: 750, category: 'Flavoured Rum' },
+            { name: 'Bacardi Lemon', ml30: 220, ml60: 330, ml90: 450, nip: 870, category: 'Flavoured Rum' },
             { name: 'Old Monk White Rum', ml30: 130, ml60: 170, ml90: 230, nip: 420, category: 'White Rum' }
         ],
         vodka: [
